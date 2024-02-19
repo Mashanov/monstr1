@@ -9,13 +9,15 @@
     
 </body>
 <script>
-    /*fetch('music.mp3')
+    var audio;
+const context = new AudioContext();
+const reader = new FileReader();
+
+fetch('music.mp3')
   .then(response => response.blob())
   .then(blob => {
-    const audio = new Audio(URL.createObjectURL(blob));
-    audio.play();
-    const context = new AudioContext();
-    const reader = new FileReader();
+    audio = new Audio(URL.createObjectURL(blob));
+audio.play();
     reader.onload = function(e) {
       const audioData = e.target.result;
       let currentPosition = 0;
@@ -41,6 +43,6 @@
       reader.readAsArrayBuffer(blob);
       sliceAudioBuffer();
     }
-  });*/
+  });
 </script>
 </html>
